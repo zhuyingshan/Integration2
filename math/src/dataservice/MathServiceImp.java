@@ -6,6 +6,7 @@ import po.LoginResult;
 import po.Selection;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class MathServiceImp implements MathService {
@@ -77,11 +78,29 @@ public class MathServiceImp implements MathService {
     }
 
     @Override
-    public boolean select(String studentID, String coureseID) {
+    public boolean select(String courseID, String studentID) {
         try {
-            Selection selection = new Selection(studentID, coureseID);
+            Selection selection = new Selection(courseID, studentID);
             String addString = " insert into selection values (" + selection.courseId
                     + "," + selection.studentId + "," + selection.grade + ")";
+            mathJdbcHelper.run(addString);
+            int result=mathJdbcHelper.pst.executeUpdate();
+            if(result!=0){
+                return  true;
+            }else{
+                return  false;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    @Override
+    public boolean deleteCourse(String courseID, String studentID){
+        try {
+            Selection selection = new Selection(courseID, studentID);
+            String addString = "delete from selection where 课程编号 = " + selection.courseId + " and 学号 = " + selection.studentId;
             mathJdbcHelper.run(addString);
             int result=mathJdbcHelper.pst.executeUpdate();
             if(result!=0){

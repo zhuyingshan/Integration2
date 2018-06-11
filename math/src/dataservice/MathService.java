@@ -14,5 +14,7 @@ public interface MathService {
 
     public ArrayList<Selection> getHistorySel(String studentID);
 
-    public boolean select(String studentID, String coureseID);
+    public boolean select(String courseID, String studentID);
+
+    public boolean deleteCourse(String courseID, String studentID);
 }
