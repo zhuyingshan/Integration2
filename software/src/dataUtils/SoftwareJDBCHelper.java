@@ -17,9 +17,7 @@ public class SoftwareJDBCHelper {
     public SoftwareJDBCHelper() {
         try {
             Class.forName(driver);
-            System.out.println("驱动启动成功");
             conn = DriverManager.getConnection(url, username, password);
-            System.out.println("连接数据库成功");
         } catch (Exception e) {
             e.printStackTrace();
         }

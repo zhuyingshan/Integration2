@@ -8,13 +8,13 @@ public class Selection {
     public Selection() {
     }
 
-    public Selection(String studentId, String courseId) {
+    public Selection(String courseId, String studentId) {
         this.studentId = studentId;
         this.courseId = courseId;
         this.grade=0;
     }
 
-    public Selection(String studentId, String courseId, double grade) {
+    public Selection(String courseId, String studentId, double grade) {
         this.studentId = studentId;
         this.courseId = courseId;
         this.grade = grade;

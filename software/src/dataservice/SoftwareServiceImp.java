@@ -14,7 +14,7 @@ public class SoftwareServiceImp implements SoftwareService {
     @Override
     public LoginResult login(String studentID, String studentName) {
         try {
-            String queryString="select 姓名 from student where 学生编号 = "+ studentID + ";";
+            String queryString="select 姓名 from student where 学号 = "+ studentID;
             System.out.println(queryString);
             softwareJdbcHelper.run(queryString);
             ResultSet set= softwareJdbcHelper.pst.executeQuery();
@@ -60,7 +60,7 @@ public class SoftwareServiceImp implements SoftwareService {
     public ArrayList<Selection> getHistorySel(String studentID) {
         ArrayList<Selection> list = new ArrayList<>();
         try {
-            String queryString = "select * from selection where 学号 = " + studentID;
+            String queryString = "select * from selection where 学生编号 = " + studentID;
             softwareJdbcHelper.run(queryString);
             ResultSet set = softwareJdbcHelper.pst.executeQuery();
             while (set.next()) {
