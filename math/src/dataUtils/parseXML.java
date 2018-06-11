@@ -2,6 +2,7 @@ package dataUtils;
 
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
+import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 import po.Course;
@@ -17,12 +18,10 @@ import java.util.Iterator;
  */
 public class parseXML {
 
-    public ArrayList<Student> paserMathStudent(String fileName) {
-        File inputXml = new File(fileName);
-        SAXReader saxReader = new SAXReader();
+    public ArrayList<Student> paserMathStudent(String xmlStr) {
         ArrayList<Student> list = new ArrayList<>();
         try {
-            Document document = saxReader.read(inputXml);
+            Document document = DocumentHelper.parseText(xmlStr);
             Element Students = document.getRootElement();
             for (Iterator i = Students.elementIterator(); i.hasNext(); ) {
                 Element element = (Element) i.next();
@@ -38,12 +37,10 @@ public class parseXML {
         return list;
     }
 
-    public ArrayList<Course> paserMathCourse(String fileName) {
-        File inputXml = new File(fileName);
-        SAXReader saxReader = new SAXReader();
+    public ArrayList<Course> paserMathCourse(String xmlStr) {
         ArrayList<Course> list = new ArrayList<>();
         try {
-            Document document = saxReader.read(inputXml);
+            Document document = DocumentHelper.parseText(xmlStr);
             Element Courses = document.getRootElement();
             for (Iterator i = Courses.elementIterator(); i.hasNext(); ) {
                 Element element = (Element) i.next();
@@ -61,12 +58,10 @@ public class parseXML {
         return list;
     }
 
-    public ArrayList<Selection> paserMathSelection(String fileName) {
-        File inputXml = new File(fileName);
-        SAXReader saxReader = new SAXReader();
+    public ArrayList<Selection> paserMathSelection(String xmlStr) {
         ArrayList<Selection> list = new ArrayList<>();
         try {
-            Document document = saxReader.read(inputXml);
+            Document document = DocumentHelper.parseText(xmlStr);
             Element Selections = document.getRootElement();
             for (Iterator i = Selections.elementIterator(); i.hasNext(); ) {
                 Element element = (Element) i.next();

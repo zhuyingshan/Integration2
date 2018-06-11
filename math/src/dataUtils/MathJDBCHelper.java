@@ -1,25 +1,25 @@
-package dataservice;
+package dataUtils;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 
-public class SoftwareJDBCHelper {
+/**
+ * @author 谢方明
+ * JDBC Oracle数据库
+ */
+
+public class MathJDBCHelper {
     private static Connection conn = null;
-    private static String driver = "org.sqlite.JDBC"; //驱动
-    private static String url = "jdbc:sqlite:collegeA.db"; //连接数据库
-    private static String username = "root"; //用户名
-    private static String password = "123456"; //密码
+    private static String driver = "oracle.jdbc.driver.OracleDriver"; //驱动
+    private static String url = "jdbc:oracle:thin:@//127.0.0.1:1521/orcl"; //连接数据库
+    private static String username = "system"; //用户名
+    private static String password = "manager"; //密码
     public PreparedStatement pst = null; //保存查询语句
 
     //连接数据库
-    public SoftwareJDBCHelper() {
+    public MathJDBCHelper() {
         try {
             Class.forName(driver);
-            System.out.println("驱动启动成功");
             conn = DriverManager.getConnection(url, username, password);
-            System.out.println("连接数据库成功");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -43,4 +43,5 @@ public class SoftwareJDBCHelper {
             e.printStackTrace();
         }
     }
+
 }

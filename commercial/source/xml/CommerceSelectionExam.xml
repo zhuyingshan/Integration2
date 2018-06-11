@@ -1,0 +1,12 @@
+<CommerceSelectionList>
+	<CommerceSelection>
+		<cns>12345678</cns>
+		<sno>123456789</sno>
+		<grd>80.6</grd>
+	</CommerceSelection>
+	<CommerceSelection>
+		<cns>12245678</cns>
+		<sno>136456789</sno>
+		<grd>88.6</grd>
+	</CommerceSelection>
+</CommerceSelectionList>

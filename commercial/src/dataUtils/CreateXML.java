@@ -1,67 +1,60 @@
 package dataUtils;
 
-import org.dom4j.Document;
-import org.dom4j.DocumentHelper;
-import org.dom4j.Element;
 import po.Course;
 import po.Selection;
 import po.Student;
 
 import java.util.ArrayList;
 
-/**
- * Created by 朱应山 on 2018/6/10.
- */
-public class CreateXML {
+import org.dom4j.*;
 
-    public static void CoursesXML(ArrayList<Course> coursesList ){
+public class CreateXML {
+    public static String CoursesXML(ArrayList<Course> coursesList) {
         // 创建Document对象
         Document document = DocumentHelper.createDocument();
         // 创建根节点
-        Element softwareCourses = document.addElement("SoftwareCourses");
-        for(Course course:coursesList){
-            Element softwareCourse=softwareCourses.addElement("SoftwareCourse");
-            Element cno=softwareCourse.addElement("课程编号");
+        Element commerceCourses = document.addElement("CommerceCourses");
+        for (Course course : coursesList) {
+            Element commerceCourse = commerceCourses.addElement("CommerceCourse");
+            Element cno = commerceCourse.addElement("cno");
             cno.setText(course.courseId);
-            Element cnm=softwareCourse.addElement("课程名称");
+            Element cnm = commerceCourse.addElement("cnm");
             cnm.setText(course.courseName);
-            Element teacher=softwareCourse.addElement("授课老师");
+            Element teacher = commerceCourse.addElement("tec");
             teacher.setText(course.teacher);
-            Element share=softwareCourse.addElement("共享");
-            share.setText(course.isShare+"");
+            Element share = commerceCourse.addElement("share");
+            share.setText(course.isShare + "");
         }
-        System.out.print(document.asXML());
+         return document.asXML();
     }
-    public static void SelectionXML(ArrayList<Selection> list){
-        Document document=DocumentHelper.createDocument();
-        Element softwareSelectionList=document.addElement("SoftwareSelectionList");
-        for (Selection selection :list) {
-            Element softwareSelection=softwareSelectionList.addElement("SoftwareSelection");
-            Element cno=softwareSelection.addElement("课程编号");
+
+    public static String  SelectionXML(ArrayList<Selection> list) {
+        Document document = DocumentHelper.createDocument();
+        Element commerceSelectionList = document.addElement("CommerceSelectionList");
+        for (Selection selection : list) {
+            Element commerceSelection = commerceSelectionList.addElement("CommerceSelection");
+            Element cno = commerceSelection.addElement("cns");
             cno.setText(selection.courseId);
-            Element cnm=softwareSelection.addElement("学生编号");
+            Element cnm = commerceSelection.addElement("sno");
             cnm.setText(selection.studentId);
-            Element grade=softwareSelection.addElement("成绩");
-            grade.setText(selection.grade+"");
+            Element grade = commerceSelection.addElement("grd");
+            grade.setText(selection.grade + "");
         }
-        System.out.print(document.asXML());
+        return document.asXML();
     }
-    public static void StudentXML(ArrayList<Student> list){
-        Document document=DocumentHelper.createDocument();
-        Element softwareStudents=document.addElement("SoftwareStudents");
-        for (Student student :list) {
-            Element softwarestudent=softwareStudents.addElement("softwarestudent");
-            Element sno=softwarestudent.addElement("学号");
+
+    public static String  StudentXML(ArrayList<Student> list) {
+        Document document = DocumentHelper.createDocument();
+        Element commerceStudents = document.addElement("CommerceStudents");
+        for (Student student : list) {
+            Element commercestudent = commerceStudents.addElement("commercestudent");
+            Element sno = commercestudent.addElement("sno");
             sno.setText(student.studentId);
-            Element snm=softwarestudent.addElement("姓名");
+            Element snm = commercestudent.addElement("snm");
             snm.setText(student.name);
-            Element dec=softwarestudent.addElement("院系");
-            dec.setText(student.department);
-            Element sex=softwarestudent.addElement("性别");
-            sex.setText(student.sex);
+            Element sde = commercestudent.addElement("sde");
+            sde.setText(student.department);
         }
-        System.out.print(document.asXML());
-
+        return document.asXML();
     }
-
 }

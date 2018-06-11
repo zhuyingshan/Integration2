@@ -1,4 +1,4 @@
-package dataservice;
+package dataUtils;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

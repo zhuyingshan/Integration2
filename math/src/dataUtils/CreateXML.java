@@ -14,7 +14,7 @@ import java.util.ArrayList;
  */
 public class CreateXML {
 
-    public static void CoursesXML(ArrayList<Course> coursesList ){
+    public static String CoursesXML(ArrayList<Course> coursesList ){
         // 创建Document对象
         Document document = DocumentHelper.createDocument();
         // 创建根节点
@@ -30,9 +30,9 @@ public class CreateXML {
             Element share=softwareCourse.addElement("共享");
             share.setText(course.isShare+"");
         }
-        System.out.print(document.asXML());
+        return document.asXML();
     }
-    public static void SelectionXML(ArrayList<Selection> list){
+    public static String SelectionXML(ArrayList<Selection> list){
         Document document=DocumentHelper.createDocument();
         Element softwareSelectionList=document.addElement("SoftwareSelectionList");
         for (Selection selection :list) {
@@ -44,9 +44,9 @@ public class CreateXML {
             Element grade=softwareSelection.addElement("成绩");
             grade.setText(selection.grade+"");
         }
-        System.out.print(document.asXML());
+        return document.asXML();
     }
-    public static void StudentXML(ArrayList<Student> list){
+    public static String StudentXML(ArrayList<Student> list){
         Document document=DocumentHelper.createDocument();
         Element softwareStudents=document.addElement("SoftwareStudents");
         for (Student student :list) {
@@ -60,7 +60,7 @@ public class CreateXML {
             Element sex=softwarestudent.addElement("性别");
             sex.setText(student.sex);
         }
-        System.out.print(document.asXML());
+        return document.asXML();
 
     }
 
