@@ -32,6 +32,7 @@ public class AllCourseServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("utf-8");
         ParseXML parseXML = new ParseXML();
         try {
             SoftwarePortServiceLocator locator = new SoftwarePortServiceLocator();
@@ -39,6 +40,8 @@ public class AllCourseServlet extends HttpServlet {
 
             String studentId = request.getParameter("studentId");
             String name = request.getParameter("name");
+
+            System.out.println(name);
 
             ArrayList<Course> courses = parseXML.paserSoftwareCourse(service.findAllCourse("666"));
 //            ArrayList<Course> courses = new ArrayList<>();
@@ -51,7 +54,7 @@ public class AllCourseServlet extends HttpServlet {
 
             HttpSession httpSession = request.getSession(false);
             httpSession.setAttribute("allCourse", courses);
-            ArrayList<Course> myCourse = parseXML.paserSoftwareCourse(service.findMyCourse(studentId));
+            ArrayList<Selection> myCourse = parseXML.paserSoftwareSelection(service.findMyCourse(studentId));
 
 //            ArrayList<Selection> myCourse = new ArrayList<>();
 //            Selection s = new Selection("22", "22", 90);
@@ -62,11 +65,13 @@ public class AllCourseServlet extends HttpServlet {
             httpSession.setAttribute("myCourse", myCourse);
 
 
+            studentId = studentId+","+name;
             String res = service.login(studentId, name);
+
+            System.out.println("============"+res);
 
             if (res.equals("SUCCESS")) {
                 httpSession.setAttribute("studentId", studentId);
-
                 response.sendRedirect("courseList.jsp");
             } else if (res.equals("ERROR")) {
                 response.sendRedirect("login.jsp");

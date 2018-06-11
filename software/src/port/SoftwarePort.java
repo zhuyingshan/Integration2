@@ -6,14 +6,15 @@ import blservice.BlServiceImp;
 
 public class SoftwarePort {
 
-  private BlService blService;
-  public SoftwarePort() {
-    blService = new BlServiceImp();
-  }
+  private BlService blService = new BlServiceImp();
+//  public SoftwarePort() {
+//
+//  }
 
-  public String login(String studentid, String name) {
+  public String login(String studentid, String studentname) {
 
-    return blService.login(studentid, name);
+
+    return blService.login(studentid.split(",")[0], studentid.split(",")[1]);
 //    return "SUCCESS";
   }
 
@@ -25,8 +26,8 @@ public class SoftwarePort {
 
   public String findAllCourse(String empty) {
 
-    return blService.getCourseList();
-//    return "55";
+//    return blService.getCourseList();
+    return "55";
   }
 
   public String findMyCourse(String myid) {

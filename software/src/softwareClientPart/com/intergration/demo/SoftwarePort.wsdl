@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions targetNamespace="http://port" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://port" xmlns:intf="http://port" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<wsdl:definitions targetNamespace="http://port" xmlns:impl="http://port" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 <!--WSDL created by Apache Axis version: 1.4
 Built on Apr 22, 2006 (06:55:48 PDT)-->
  <wsdl:types>
   <schema elementFormDefault="qualified" targetNamespace="http://port" xmlns="http://www.w3.org/2001/XMLSchema">
    <element name="studentid" type="xsd:string"/>
-   <element name="name" type="xsd:string"/>
+   <element name="studentname" type="xsd:string"/>
    <element name="loginReturn" type="xsd:string"/>
+   <element name="empty" type="xsd:string"/>
+   <element name="findAllCourseReturn" type="xsd:string"/>
    <element name="myid" type="xsd:string"/>
    <element name="findMyCourseReturn" type="xsd:string"/>
    <element name="id" type="xsd:string"/>
    <element name="courseid" type="xsd:string"/>
    <element name="chooseCourseReturn" type="xsd:string"/>
-   <element name="empty" type="xsd:string"/>
-   <element name="findAllCourseReturn" type="xsd:string"/>
   </schema>
  </wsdl:types>
 
@@ -47,7 +48,7 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       <wsdl:part element="impl:studentid" name="studentid"/>
 
-      <wsdl:part element="impl:name" name="name"/>
+      <wsdl:part element="impl:studentname" name="studentname"/>
 
    </wsdl:message>
 
@@ -71,11 +72,19 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    <wsdl:portType name="SoftwarePort">
 
-      <wsdl:operation name="login" parameterOrder="studentid name">
+      <wsdl:operation name="login" parameterOrder="studentid studentname">
 
          <wsdl:input message="impl:loginRequest" name="loginRequest"/>
 
          <wsdl:output message="impl:loginResponse" name="loginResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="findAllCourse" parameterOrder="empty">
+
+         <wsdl:input message="impl:findAllCourseRequest" name="findAllCourseRequest"/>
+
+         <wsdl:output message="impl:findAllCourseResponse" name="findAllCourseResponse"/>
 
       </wsdl:operation>
 
@@ -92,14 +101,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
          <wsdl:input message="impl:chooseCourseRequest" name="chooseCourseRequest"/>
 
          <wsdl:output message="impl:chooseCourseResponse" name="chooseCourseResponse"/>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="findAllCourse" parameterOrder="empty">
-
-         <wsdl:input message="impl:findAllCourseRequest" name="findAllCourseRequest"/>
-
-         <wsdl:output message="impl:findAllCourseResponse" name="findAllCourseResponse"/>
 
       </wsdl:operation>
 
@@ -120,6 +121,24 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
          </wsdl:input>
 
          <wsdl:output name="loginResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="findAllCourse">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="findAllCourseRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="findAllCourseResponse">
 
             <wsdlsoap:body use="literal"/>
 
@@ -156,24 +175,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
          </wsdl:input>
 
          <wsdl:output name="chooseCourseResponse">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:output>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="findAllCourse">
-
-         <wsdlsoap:operation soapAction=""/>
-
-         <wsdl:input name="findAllCourseRequest">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:input>
-
-         <wsdl:output name="findAllCourseResponse">
 
             <wsdlsoap:body use="literal"/>
 

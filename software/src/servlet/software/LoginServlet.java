@@ -3,7 +3,6 @@ package servlet.software;
 import softwareClientPart.com.intergration.demo.SoftwarePortServiceLocator;
 import softwareClientPart.com.intergration.demo.SoftwarePort_PortType;
 
-import javax.jms.Session;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

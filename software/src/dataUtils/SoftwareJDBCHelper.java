@@ -8,7 +8,7 @@ import java.sql.SQLException;
 public class SoftwareJDBCHelper {
     private static Connection conn = null;
     private static String driver = "org.sqlite.JDBC"; //驱动
-    private static String url = "jdbc:sqlite:collegeA.db"; //连接数据库
+    private static String url = "jdbc:sqlite:F:\\collegeA.db"; //连接数据库
     private static String username = "root"; //用户名
     private static String password = "123456"; //密码
     public PreparedStatement pst = null; //保存查询语句

@@ -1,5 +1,7 @@
 package dataservice;
 
+import blservice.BlService;
+import blservice.BlServiceImp;
 import format.Format;
 import format.TramsformType;
 import format.UniteParseXML;
@@ -12,8 +14,8 @@ import java.util.ArrayList;
  */
 public class Test {
     public static void main(String []args) {
-        String getStr="";//从其他院系获得来的string
-        String format= Format.formatXML(getStr, TramsformType.COURSETOUNITE);
-        ArrayList<Course> list = UniteParseXML.paserUniteCourse(format);
+        BlService softwareService = new BlServiceImp();
+        System.out.print(softwareService.login("151250001","戚蓉"));
+
     }
 }

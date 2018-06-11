@@ -27,7 +27,7 @@ public class SoftwarePortSoapBindingStub extends org.apache.axis.client.Stub imp
         oper.setName("login");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://port", "studentid"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), String.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://port", "name"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://port", "studentname"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), String.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         oper.setReturnClass(String.class);
@@ -35,6 +35,17 @@ public class SoftwarePortSoapBindingStub extends org.apache.axis.client.Stub imp
         oper.setStyle(org.apache.axis.constants.Style.DOCUMENT);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[0] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("findAllCourse");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://port", "empty"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), String.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        oper.setReturnClass(String.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://port", "findAllCourseReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.DOCUMENT);
+        oper.setUse(org.apache.axis.constants.Use.LITERAL);
+        _operations[1] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("findMyCourse");
@@ -45,7 +56,7 @@ public class SoftwarePortSoapBindingStub extends org.apache.axis.client.Stub imp
         oper.setReturnQName(new javax.xml.namespace.QName("http://port", "findMyCourseReturn"));
         oper.setStyle(org.apache.axis.constants.Style.DOCUMENT);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[1] = oper;
+        _operations[2] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("chooseCourse");
@@ -56,17 +67,6 @@ public class SoftwarePortSoapBindingStub extends org.apache.axis.client.Stub imp
         oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         oper.setReturnClass(String.class);
         oper.setReturnQName(new javax.xml.namespace.QName("http://port", "chooseCourseReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.DOCUMENT);
-        oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[2] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("findAllCourse");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://port", "empty"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), String.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        oper.setReturnClass(String.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://port", "findAllCourseReturn"));
         oper.setStyle(org.apache.axis.constants.Style.DOCUMENT);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[3] = oper;
@@ -124,7 +124,7 @@ public class SoftwarePortSoapBindingStub extends org.apache.axis.client.Stub imp
         }
     }
 
-    public String login(String studentid, String name) throws java.rmi.RemoteException {
+    public String login(String studentid, String studentname) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -140,7 +140,41 @@ public class SoftwarePortSoapBindingStub extends org.apache.axis.client.Stub imp
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        Object _resp = _call.invoke(new Object[] {studentid, name});
+ try {        Object _resp = _call.invoke(new Object[] {studentid, studentname});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (String) _resp;
+            } catch (Exception _exception) {
+                return (String) org.apache.axis.utils.JavaUtils.convert(_resp, String.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public String findAllCourse(String empty) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[1]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setEncodingStyle(null);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("", "findAllCourse"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        Object _resp = _call.invoke(new Object[] {empty});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -163,7 +197,7 @@ public class SoftwarePortSoapBindingStub extends org.apache.axis.client.Stub imp
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[1]);
+        _call.setOperation(_operations[2]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
@@ -197,7 +231,7 @@ public class SoftwarePortSoapBindingStub extends org.apache.axis.client.Stub imp
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[2]);
+        _call.setOperation(_operations[3]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
@@ -209,40 +243,6 @@ public class SoftwarePortSoapBindingStub extends org.apache.axis.client.Stub imp
         setRequestHeaders(_call);
         setAttachments(_call);
  try {        Object _resp = _call.invoke(new Object[] {id, courseid});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (String) _resp;
-            } catch (Exception _exception) {
-                return (String) org.apache.axis.utils.JavaUtils.convert(_resp, String.class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public String findAllCourse(String empty) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[3]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setEncodingStyle(null);
-        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
-        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("", "findAllCourse"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        Object _resp = _call.invoke(new Object[] {empty});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;

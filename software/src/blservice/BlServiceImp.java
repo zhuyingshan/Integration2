@@ -17,6 +17,7 @@ public class BlServiceImp implements  BlService{
 
     @Override
     public String login(String studentID, String studentName) {
+        System.out.println(studentID);
         return  softwareService.login(studentID,studentName).toString();
     }
 
@@ -32,6 +33,8 @@ public class BlServiceImp implements  BlService{
 
     @Override
     public String select(String studentID, String coureseID) {
+        System.out.println(studentID);
+        System.out.println(coureseID);
         return softwareService.select(studentID,coureseID)==true?"true":"false";
     }
     /**

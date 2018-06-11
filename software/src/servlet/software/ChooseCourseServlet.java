@@ -33,6 +33,8 @@ public class ChooseCourseServlet extends HttpServlet {
             SoftwarePort_PortType service = locator.getSoftwarePort();
             HttpSession httpSession = request.getSession(false);
 
+            System.out.println(request.getParameter("courseId"));
+
             String result = service.chooseCourse((String) httpSession.getAttribute("studentId"), request.getParameter("courseId"));
             if (result.equals("true")) {
                 response.sendRedirect("courseList.jsp");

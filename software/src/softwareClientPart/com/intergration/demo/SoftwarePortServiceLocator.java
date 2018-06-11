@@ -7,7 +7,6 @@
 
 package softwareClientPart.com.intergration.demo;
 
-import java.net.URL;
 import java.rmi.Remote;
 
 public class SoftwarePortServiceLocator extends org.apache.axis.client.Service implements SoftwarePortService {
@@ -53,7 +52,7 @@ public class SoftwarePortServiceLocator extends org.apache.axis.client.Service i
         return getSoftwarePort(endpoint);
     }
 
-    public SoftwarePort_PortType getSoftwarePort(URL portAddress) throws javax.xml.rpc.ServiceException {
+    public SoftwarePort_PortType getSoftwarePort(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {
         try {
             SoftwarePortSoapBindingStub _stub = new SoftwarePortSoapBindingStub(portAddress, this);
             _stub.setPortName(getSoftwarePortWSDDServiceName());
@@ -125,11 +124,11 @@ public class SoftwarePortServiceLocator extends org.apache.axis.client.Service i
     * Set the endpoint address for the specified port name.
     */
     public void setEndpointAddress(String portName, String address) throws javax.xml.rpc.ServiceException {
-        
+
 if ("SoftwarePort".equals(portName)) {
             setSoftwarePortEndpointAddress(address);
         }
-        else 
+        else
 { // Unknown Port Name
             throw new javax.xml.rpc.ServiceException(" Cannot set Endpoint Address for Unknown Port" + portName);
         }

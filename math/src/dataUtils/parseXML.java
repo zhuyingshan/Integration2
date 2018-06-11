@@ -16,7 +16,7 @@ import java.util.Iterator;
 /**
  * Created by 朱应山 on 2018/6/10.
  */
-public class parseXML {
+public class ParseXML {
 
     public ArrayList<Student> paserMathStudent(String xmlStr) {
         ArrayList<Student> list = new ArrayList<>();

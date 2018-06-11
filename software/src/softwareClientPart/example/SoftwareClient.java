@@ -8,7 +8,7 @@ public class SoftwareClient {
     try {
       SoftwarePortServiceLocator locator = new SoftwarePortServiceLocator();
       SoftwarePort_PortType service = locator.getSoftwarePort();
-      String res = service.login("33", "77");
+      String res = service.login("33哈哈哈", "嘿嘿");
       System.out.println(res);
       System.out.println(service.chooseCourse("22", "55"));
       System.out.println(service.findAllCourse("77"));
