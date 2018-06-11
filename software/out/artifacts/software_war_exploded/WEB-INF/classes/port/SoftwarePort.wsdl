@@ -4,16 +4,16 @@
 Built on Apr 22, 2006 (06:55:48 PDT)-->
  <wsdl:types>
   <schema elementFormDefault="qualified" targetNamespace="http://port" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="studentid" type="xsd:string"/>
+   <element name="name" type="xsd:string"/>
+   <element name="loginReturn" type="xsd:string"/>
+   <element name="myid" type="xsd:string"/>
+   <element name="findMyCourseReturn" type="xsd:string"/>
    <element name="id" type="xsd:string"/>
    <element name="courseid" type="xsd:string"/>
    <element name="chooseCourseReturn" type="xsd:string"/>
    <element name="empty" type="xsd:string"/>
    <element name="findAllCourseReturn" type="xsd:string"/>
-   <element name="myid" type="xsd:string"/>
-   <element name="findMyCourseReturn" type="xsd:string"/>
-   <element name="studentid" type="xsd:string"/>
-   <element name="name" type="xsd:string"/>
-   <element name="loginReturn" type="xsd:string"/>
   </schema>
  </wsdl:types>
 
@@ -43,12 +43,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:message>
 
-   <wsdl:message name="findMyCourseRequest">
-
-      <wsdl:part element="impl:myid" name="myid"/>
-
-   </wsdl:message>
-
    <wsdl:message name="loginRequest">
 
       <wsdl:part element="impl:studentid" name="studentid"/>
@@ -57,9 +51,9 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:message>
 
-   <wsdl:message name="chooseCourseResponse">
+   <wsdl:message name="findMyCourseRequest">
 
-      <wsdl:part element="impl:chooseCourseReturn" name="chooseCourseReturn"/>
+      <wsdl:part element="impl:myid" name="myid"/>
 
    </wsdl:message>
 
@@ -69,7 +63,29 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:message>
 
+   <wsdl:message name="chooseCourseResponse">
+
+      <wsdl:part element="impl:chooseCourseReturn" name="chooseCourseReturn"/>
+
+   </wsdl:message>
+
    <wsdl:portType name="SoftwarePort">
+
+      <wsdl:operation name="login" parameterOrder="studentid name">
+
+         <wsdl:input message="impl:loginRequest" name="loginRequest"/>
+
+         <wsdl:output message="impl:loginResponse" name="loginResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="findMyCourse" parameterOrder="myid">
+
+         <wsdl:input message="impl:findMyCourseRequest" name="findMyCourseRequest"/>
+
+         <wsdl:output message="impl:findMyCourseResponse" name="findMyCourseResponse"/>
+
+      </wsdl:operation>
 
       <wsdl:operation name="chooseCourse" parameterOrder="id courseid">
 
@@ -87,27 +103,47 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="findMyCourse" parameterOrder="myid">
-
-         <wsdl:input message="impl:findMyCourseRequest" name="findMyCourseRequest"/>
-
-         <wsdl:output message="impl:findMyCourseResponse" name="findMyCourseResponse"/>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="login" parameterOrder="studentid name">
-
-         <wsdl:input message="impl:loginRequest" name="loginRequest"/>
-
-         <wsdl:output message="impl:loginResponse" name="loginResponse"/>
-
-      </wsdl:operation>
-
    </wsdl:portType>
 
    <wsdl:binding name="SoftwarePortSoapBinding" type="impl:SoftwarePort">
 
       <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="login">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="loginRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="loginResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="findMyCourse">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="findMyCourseRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="findMyCourseResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
 
       <wsdl:operation name="chooseCourse">
 
@@ -138,42 +174,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
          </wsdl:input>
 
          <wsdl:output name="findAllCourseResponse">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:output>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="findMyCourse">
-
-         <wsdlsoap:operation soapAction=""/>
-
-         <wsdl:input name="findMyCourseRequest">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:input>
-
-         <wsdl:output name="findMyCourseResponse">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:output>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="login">
-
-         <wsdlsoap:operation soapAction=""/>
-
-         <wsdl:input name="loginRequest">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:input>
-
-         <wsdl:output name="loginResponse">
 
             <wsdlsoap:body use="literal"/>
 

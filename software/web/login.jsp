@@ -8,9 +8,16 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>$Title$</title>
+    <title>Software-login</title>
   </head>
   <body>
-  $END$
+    <form>
+      <label for="studentId">学号:</label>
+      <input type="text" id="studentId" />
+      <label for="name">姓名:</label>
+      <input type="text" id="name">
+
+      <input type="submit" value="Login">
+    </form>
   </body>
 </html>
