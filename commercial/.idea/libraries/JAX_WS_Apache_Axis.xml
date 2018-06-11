@@ -10,6 +10,7 @@
       <root url="jar://$PROJECT_DIR$/lib/wsdl4j-1.5.1.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/log4j-1.2.8.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/dom4j-1.6.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/mysql-connector-java-5.1.46-bin.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
