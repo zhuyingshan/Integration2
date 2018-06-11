@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?><SoftwareSelectionList>
+<SoftwareSelection 课程编号="12345678" 学生编号="123456789" 成绩="80.6"/>
+<SoftwareSelection 课程编号="12245688" 学生编号="136456789" 成绩="88.0"/>
+</SoftwareSelectionList>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- created with XMLSpear -->
+<SoftwareCourses>
+	<SoftwareCourse>
+		<课程编号>00000001</课程编号>
+		<课程名称>软件测试</课程名称>
+		<授课老师>陈振宇</授课老师>
+		<共享>是</共享>
+	</SoftwareCourse>
+	<SoftwareCourse>
+		<课程编号>00000002</课程编号>
+		<课程名称>软工3</课程名称>
+		<授课老师>刘钦</授课老师>
+		<共享>是</共享>
+	</SoftwareCourse>
+	<SoftwareCourse>
+		<课程编号>00000003</课程编号>
+		<课程名称>软工2</课程名称>
+		<授课老师>刘钦</授课老师>
+		<共享>否</共享>
+	</SoftwareCourse>
+</SoftwareCourses>

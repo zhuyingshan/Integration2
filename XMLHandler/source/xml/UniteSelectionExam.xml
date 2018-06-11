@@ -1,0 +1,12 @@
+<UniteSelectionList>
+	<UniteSelection>
+		<课程编号>12345678</课程编号>
+		<学生编号>123456789</学生编号>
+		<分数>80.6</分数>
+	</UniteSelection>
+	<UniteSelection>
+		<课程编号>12245688</课程编号>
+		<学生编号>136456789</学生编号>
+		<分数>88.0</分数>
+	</UniteSelection>
+</UniteSelectionList>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SoftwareStudents>
+    <softwarestudent>
+        <学号>151250001</学号>
+        <姓名>张三</姓名>
+        <院系>software</院系>
+    </softwarestudent>
+    <softwarestudent>
+        <学号>151350001</学号>
+        <姓名>李四</姓名>
+        <院系>commerce</院系>
+    </softwarestudent>
+    <softwarestudent>
+        <学号>151450001</学号>
+        <姓名>王五</姓名>
+        <院系>math</院系>
+    </softwarestudent>
+    <softwarestudent>
+        <学号>151250010</学号>
+        <姓名>马六</姓名>
+        <院系>software</院系>
+    </softwarestudent>
+    <softwarestudent>
+        <学号>151250100</学号>
+        <姓名>吴七</姓名>
+        <院系>software</院系>
+    </softwarestudent>
+    <softwarestudent>
+        <学号>151350010</学号>
+        <姓名>孟八</姓名>
+        <院系>commerce</院系>
+    </softwarestudent>
+    <softwarestudent>
+        <学号>151450010</学号>
+        <姓名>陈九</姓名>
+        <院系>math</院系>
+    </softwarestudent>
+</SoftwareStudents>

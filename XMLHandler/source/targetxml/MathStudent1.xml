@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MathStudents>
+    <mathstudent>
+        <学生编号>151250001</学生编号>
+        <姓名>张三</姓名>
+        <专业>software</专业>
+    </mathstudent>
+    <mathstudent>
+        <学生编号>151350001</学生编号>
+        <姓名>李四</姓名>
+        <专业>commerce</专业>
+    </mathstudent>
+    <mathstudent>
+        <学生编号>151450001</学生编号>
+        <姓名>王五</姓名>
+        <专业>math</专业>
+    </mathstudent>
+    <mathstudent>
+        <学生编号>151250010</学生编号>
+        <姓名>马六</姓名>
+        <专业>software</专业>
+    </mathstudent>
+    <mathstudent>
+        <学生编号>151250100</学生编号>
+        <姓名>吴七</姓名>
+        <专业>software</专业>
+    </mathstudent>
+    <mathstudent>
+        <学生编号>151350010</学生编号>
+        <姓名>孟八</姓名>
+        <专业>commerce</专业>
+    </mathstudent>
+    <mathstudent>
+        <学生编号>151450010</学生编号>
+        <姓名>陈九</姓名>
+        <专业>math</专业>
+    </mathstudent>
+</MathStudents>

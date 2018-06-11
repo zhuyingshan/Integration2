@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CommerceStudents>
+    <commercestudent>
+        <sno>151250001</sno>
+        <snm>张三</snm>
+        <sde>software</sde>
+    </commercestudent>
+    <commercestudent>
+        <sno>151350001</sno>
+        <snm>李四</snm>
+        <sde>commerce</sde>
+    </commercestudent>
+    <commercestudent>
+        <sno>151450001</sno>
+        <snm>王五</snm>
+        <sde>math</sde>
+    </commercestudent>
+    <commercestudent>
+        <sno>151250010</sno>
+        <snm>马六</snm>
+        <sde>software</sde>
+    </commercestudent>
+    <commercestudent>
+        <sno>151250100</sno>
+        <snm>吴七</snm>
+        <sde>software</sde>
+    </commercestudent>
+    <commercestudent>
+        <sno>151350010</sno>
+        <snm>孟八</snm>
+        <sde>commerce</sde>
+    </commercestudent>
+    <commercestudent>
+        <sno>151450010</sno>
+        <snm>陈九</snm>
+        <sde>math</sde>
+    </commercestudent>
+</CommerceStudents>

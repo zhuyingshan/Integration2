@@ -1,0 +1,12 @@
+<CommerceStudents>
+    <commercestudent>
+	   <sno>151350001</sno>
+	   <snm>李四</snm>
+	   <sde>commerce</sde>
+	</commercestudent>
+	<commercestudent>
+	   <sno>151350010</sno>
+	   <snm>孟八</snm>
+	   <sde>commerce</sde>
+	</commercestudent>
+</CommerceStudents>

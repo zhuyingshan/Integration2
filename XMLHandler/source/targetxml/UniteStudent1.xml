@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UnitedStudents>
+    <student>
+        <学号>151250001</学号>
+        <姓名>张三</姓名>
+        <院系>software</院系>
+    </student>
+    <student>
+        <学号>151250010</学号>
+        <姓名>马六</姓名>
+        <院系>software</院系>
+    </student>
+    <student>
+        <学号>151250100</学号>
+        <姓名>吴七</姓名>
+        <院系>software</院系>
+    </student>
+</UnitedStudents>

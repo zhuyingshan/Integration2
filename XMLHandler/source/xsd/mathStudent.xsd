@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="MathStudents">
+	   <xs:complexType>
+	      <xs:sequence minOccurs="0" maxOccurs="unbounded">
+		     <xs:element name="mathstudent">
+			 <xs:complexType>
+			    <xs:sequence>
+			       <xs:element name="学生编号" type="学号类型"/>
+                   <xs:element name="姓名" type="姓名类型"/>
+                   <xs:element name="专业" type="院系类型"/>
+                </xs:sequence>
+			</xs:complexType>
+		</xs:element>
+	</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+			
+			<xs:simpleType name="院系类型">
+               <xs:restriction base="xs:string">
+		          <xs:minLength value="2"/>
+                  <xs:maxLength value="10"/>
+               </xs:restriction>
+            </xs:simpleType>
+	
+	        <xs:simpleType name="姓名类型">
+               <xs:restriction base="xs:string">
+		          <xs:minLength value="2"/>
+                  <xs:maxLength value="9"/>
+               </xs:restriction>
+            </xs:simpleType>
+	
+	        <xs:simpleType name="学号类型">
+               <xs:restriction base="xs:string">
+                  <xs:length value="9"/>
+               </xs:restriction>
+            </xs:simpleType>
+</xs:schema>

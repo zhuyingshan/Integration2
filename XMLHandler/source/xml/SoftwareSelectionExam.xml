@@ -1,0 +1,12 @@
+<SoftwareSelectionList>
+	<SoftwareSelection>
+		<课程编号>12345678</课程编号>
+		<学生编号>123456789</学生编号>
+		<成绩>80.0</成绩>
+	</SoftwareSelection>
+	<SoftwareSelection>
+		<课程编号>12245688</课程编号>
+		<学生编号>136456789</学生编号>
+		<成绩>88.6</成绩>
+	</SoftwareSelection>
+</SoftwareSelectionList>

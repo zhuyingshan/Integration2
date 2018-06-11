@@ -1,5 +1,6 @@
 <component name="libraryTable">
-  <library name="JAX-WS-Apache Axis">
+  <library name="JAX-WS-Apache Axis" type="JAX-WS">
+    <properties version="Apache Axis" />
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/lib/commons-discovery-0.2.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/commons-logging-1.0.4.jar!/" />
@@ -9,7 +10,6 @@
       <root url="jar://$PROJECT_DIR$/lib/saaj.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/log4j-1.2.8.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/dom4j-1.6.1.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/ojdbc6.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

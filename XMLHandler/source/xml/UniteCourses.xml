@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- created with XMLSpear -->
+<UniteCourses>
+	<UniteCourse>
+		<课程编号>00000001</课程编号>
+		<课程名称>软件测试</课程名称>
+		<授课老师>陈振宇</授课老师>
+		<共享>是</共享>
+	</UniteCourse>
+	<UniteCourse>
+		<课程编号>00000007</课程编号>
+		<课程名称>线性代数</课程名称>
+		<授课老师>线性代数老师</授课老师>
+		<共享>是</共享>
+	</UniteCourse>
+	<UniteCourse>
+		<课程编号>00000009</课程编号>
+		<课程名称>经济学</课程名称>
+		<授课老师>经济学老师</授课老师>
+		<共享>否</共享>
+	</UniteCourse>
+</UniteCourses>

@@ -32,4 +32,8 @@ public interface BlService {
      * @return
      */
     public String select(String studentID, String coureseID);
+    /**
+     *
+     */
+    public String deleteCourse(String courseID,String studentID);
 }

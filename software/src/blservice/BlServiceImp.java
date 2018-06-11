@@ -34,4 +34,12 @@ public class BlServiceImp implements  BlService{
     public String select(String studentID, String coureseID) {
         return softwareService.select(studentID,coureseID)==true?"true":"false";
     }
+    /**
+     * @param courseID
+     * @param studentID
+     */
+    @Override
+    public String deleteCourse(String courseID, String studentID) {
+        return softwareService.deleteCourse(courseID,studentID)==true?"true":"false";
+    }
 }

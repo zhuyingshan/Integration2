@@ -122,4 +122,29 @@ public class CommerceServiceImp implements CommerceService {
         }
         return false;
     }
+
+    /**
+     * 删除课程
+     *
+     * @param courseID
+     * @param studentID
+     * @return
+     */
+    @Override
+    public boolean deleteCourse(String courseID, String studentID) {
+        try {
+            Selection selection = new Selection(courseID, studentID);
+            String addString = "delete from selection where cno = " + selection.courseId + " and sno = " + selection.studentId;
+            jdbcHelper.run(addString);
+            int result=jdbcHelper.pst.executeUpdate();
+            if(result!=0){
+                return  true;
+            }else{
+                return  false;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
 }

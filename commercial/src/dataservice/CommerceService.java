@@ -38,4 +38,12 @@ public interface CommerceService {
      * @return
      */
     public boolean select(String studentID, String coureseID);
+
+    /**
+     * 删除课程
+     * @param courseID
+     * @param studentID
+     * @return
+     */
+    public boolean deleteCourse(String courseID, String studentID);
 }

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MathCourses>
+    <MathCourse>
+        <编号>00000001</编号>
+        <名称>软件测试</名称>
+        <老师>陈振宇</老师>
+        <共享>是</共享>
+    </MathCourse>
+    <MathCourse>
+        <编号>00000007</编号>
+        <名称>线性代数</名称>
+        <老师>线性代数老师</老师>
+        <共享>是</共享>
+    </MathCourse>
+    <MathCourse>
+        <编号>00000009</编号>
+        <名称>经济学</名称>
+        <老师>经济学老师</老师>
+        <共享>否</共享>
+    </MathCourse>
+</MathCourses>

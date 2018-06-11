@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><CommerceCourses>
+<CommerceCourse>
+<cno>00000001</cno>
+<cnm>软件测试</cnm>
+<tec>陈振宇</tec>
+<share>是</share>
+</CommerceCourse>
+<CommerceCourse>
+<cno>00000007</cno>
+<cnm>线性代数</cnm>
+<tec>线性代数老师</tec>
+<share>是</share>
+</CommerceCourse>
+<CommerceCourse>
+<cno>00000009</cno>
+<cnm>经济学</cnm>
+<tec>经济学老师</tec>
+<share>否</share>
+</CommerceCourse>
+</CommerceCourses>

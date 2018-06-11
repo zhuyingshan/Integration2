@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- created with XMLSpear -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="UniteCourses" type="课程列表">
+    </xs:element>
+
+    <xs:complexType name="课程列表">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="UniteCourse" type="课程">
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="课程">
+        <xs:sequence>
+            <xs:element name="课程编号" type="编号">
+            </xs:element>
+            <xs:element name="课程名称" type="名称">
+            </xs:element>
+            <xs:element name="授课老师" type="老师">
+            </xs:element>
+            <xs:element name="共享" type="分享">
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="编号">
+        <xs:restriction base="xs:string">
+            <xs:length value="8"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="名称">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="2"/>
+            <xs:maxLength value="12"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="老师">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="2"/>
+            <xs:maxLength value="8"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="分享">
+        <xs:restriction base="xs:string">
+            <xs:length value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

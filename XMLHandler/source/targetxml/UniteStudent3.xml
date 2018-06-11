@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UnitedStudents>
+    <student>
+        <学号>151350001</学号>
+        <姓名>李四</姓名>
+        <院系>commerce</院系>
+    </student>
+    <student>
+        <学号>151350010</学号>
+        <姓名>孟八</姓名>
+        <院系>commerce</院系>
+    </student>
+</UnitedStudents>

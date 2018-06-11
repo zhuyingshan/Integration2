@@ -1,0 +1,12 @@
+<MathSelectionList>
+	<MathSelection>
+		<课程编号>00001234</课程编号>
+		<学号>123456789</学号>
+		<分数>60.6</分数>
+	</MathSelection>
+	<MathSelection>
+		<课程编号>00012345</课程编号>
+		<学号>123456788</学号>
+		<分数>60.0</分数>
+	</MathSelection>
+</MathSelectionList>
