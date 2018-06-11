@@ -51,6 +51,7 @@ public class AllCourseServlet extends HttpServlet {
 //            courses.add(c);
 //            courses.add(c1);
 //            courses.add(c2);
+            System.out.println("-----------"+courses.size());
 
             HttpSession httpSession = request.getSession(false);
             httpSession.setAttribute("allCourse", courses);

@@ -23,7 +23,9 @@ public class BlServiceImp implements  BlService{
 
     @Override
     public String getCourseList() {
-        return CreateXML.CoursesXML(softwareService.getCourseList());
+        String str=CreateXML.CoursesXML(softwareService.getCourseList());
+
+        return str;
     }
 
     @Override

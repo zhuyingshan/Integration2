@@ -26,8 +26,8 @@ public class SoftwarePort {
 
   public String findAllCourse(String empty) {
 
-//    return blService.getCourseList();
-    return "55";
+      return blService.getCourseList();
+  //  return "55";
   }
 
   public String findMyCourse(String myid) {

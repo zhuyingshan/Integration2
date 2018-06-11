@@ -54,6 +54,8 @@ public class SoftwareServiceImp implements SoftwareService {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        System.out.println("########"+list.size());
         return list;
     }
 
