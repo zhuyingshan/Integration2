@@ -1,5 +1,7 @@
 package port;
 
+import blservice.BlService;
+import blservice.BlServiceImp;
 import po.Course;
 import po.Grade;
 import po.LoginResult;
@@ -9,37 +11,29 @@ import java.util.List;
 
 public class MathPort {
 
+  private BlService blService;
+
+  public MathPort() {
+    blService = new BlServiceImp();
+  }
+
   public String login(String studentid, String name) {
-    return String.valueOf(LoginResult.SUCCESS);
+
+    return blService.login(studentid, name);
   }
 
   public String chooseCourse(String id, String courseid) {
-    return String.valueOf(LoginResult.NOTEXIST);
+
+    return blService.select(id, courseid);
   }
 
   public String findAllCourse(String empty) {
 
-    List<Course> list = new ArrayList<>();
-    Course course = new Course();
-    course.setCourseId("111");
-    course.setCourseName("测试");
-    course.setIsShare('f');
-    course.setTeacher("嘿嘿");
-    list.add(course);
-
-    return "33";
+    return blService.getCourseList();
   }
 
   public String findMyCourse(String myid) {
-    List<Grade> list = new ArrayList<>();
 
-    Grade grade = new Grade();
-    grade.setCourseId("111");
-    grade.setStudentId("444");
-    grade.setGrade(66);
-
-    list.add(grade);
-
-    return "00";
+    return blService.getHistorySel(myid);
   }
 }
