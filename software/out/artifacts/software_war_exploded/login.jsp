@@ -11,13 +11,14 @@
     <title>Software-login</title>
   </head>
   <body>
-    <form>
+    <form action="/softwareAllCourse" method="post">
       <label for="studentId">学号:</label>
-      <input type="text" id="studentId" />
+      <input type="text" name="studentId" id="studentId" />
       <label for="name">姓名:</label>
-      <input type="text" id="name">
+      <input type="text" name="name" id="name">
 
-      <input type="submit" name="login">
+      <input type="submit" value="Login">
     </form>
+
   </body>
 </html>
