@@ -13,25 +13,25 @@ public class SoftwarePort {
 
   public String login(String studentid, String name) {
 
-//    return blService.login(studentid, name);
-    return "SUCCESS";
+    return blService.login(studentid, name);
+//    return "SUCCESS";
   }
 
   public String chooseCourse(String id, String courseid) {
 
-//    return blService.select(id, courseid);
-    return "false";
+    return blService.select(id, courseid);
+//    return "false";
   }
 
   public String findAllCourse(String empty) {
 
-//    return blService.getCourseList();
-    return "55";
+    return blService.getCourseList();
+//    return "55";
   }
 
   public String findMyCourse(String myid) {
 
-//    return blService.getHistorySel(myid);
-    return "66";
+    return blService.getHistorySel(myid);
+//    return "66";
   }
 }
