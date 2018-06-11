@@ -20,7 +20,9 @@ public class SoftwarePort {
 
   public String chooseCourse(String id, String courseid) {
 
-    return blService.select(id, courseid);
+//    System.out.println("////////////////"+id);
+
+    return blService.select(id.split(",")[0], id.split(",")[1]);
 //    return "false";
   }
 

@@ -80,7 +80,7 @@ public class SoftwareServiceImp implements SoftwareService {
     }
 
     @Override
-    public boolean select(String courseID, String studentID) {
+    public boolean select(String studentID, String courseID) {
         try {
             Selection selection = new Selection(courseID, studentID);
             String addString = " insert into selection values (" + selection.courseId

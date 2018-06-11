@@ -57,6 +57,8 @@ public class AllCourseServlet extends HttpServlet {
             httpSession.setAttribute("allCourse", courses);
             ArrayList<Selection> myCourse = parseXML.paserSoftwareSelection(service.findMyCourse(studentId));
 
+            System.out.println("====================="+myCourse.size());
+
 //            ArrayList<Selection> myCourse = new ArrayList<>();
 //            Selection s = new Selection("22", "22", 90);
 //            Selection s1 = new Selection("23", "22", 90);
@@ -66,8 +68,8 @@ public class AllCourseServlet extends HttpServlet {
             httpSession.setAttribute("myCourse", myCourse);
 
 
-            studentId = studentId+","+name;
-            String res = service.login(studentId, name);
+            String param = studentId+","+name;
+            String res = service.login(param, name);
 
             System.out.println("============"+res);
 
