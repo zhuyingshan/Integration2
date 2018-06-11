@@ -17,7 +17,7 @@ import java.util.Iterator;
 public class UniteParseXML {
 
 
-    public ArrayList<Course> paserUniteCourse(String xmlStr) {
+    public static ArrayList<Course> paserUniteCourse(String xmlStr) {
         ArrayList<Course> list = new ArrayList<>();
         try {
             Document document = DocumentHelper.parseText(xmlStr);
@@ -39,7 +39,7 @@ public class UniteParseXML {
     }
 
 
-    public ArrayList<Student> paserUniteStudent(String xmlStr) {
+    public static ArrayList<Student> paserUniteStudent(String xmlStr) {
         ArrayList<Student> list = new ArrayList<>();
         try {
             Document document = DocumentHelper.parseText(xmlStr);
@@ -60,7 +60,7 @@ public class UniteParseXML {
     }
 
 
-    public ArrayList<Selection> paserUniteSelection(String xmlStr) {
+    public static ArrayList<Selection> paserUniteSelection(String xmlStr) {
         ArrayList<Selection> list = new ArrayList<>();
         try {
             Document document = DocumentHelper.parseText(xmlStr);

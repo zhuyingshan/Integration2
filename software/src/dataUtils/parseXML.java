@@ -18,7 +18,7 @@ import java.util.Iterator;
  */
 public class parseXML {
 
-    public ArrayList<Course> paserSoftwareCourse(String xmlStr) {
+    public static ArrayList<Course> paserSoftwareCourse(String xmlStr) {
         ArrayList<Course> list = new ArrayList<>();
         try {
             Document document = DocumentHelper.parseText(xmlStr);
@@ -40,7 +40,7 @@ public class parseXML {
     }
 
 
-    public ArrayList<Student> paserSoftwareStudent(String xmlStr) {
+    public static ArrayList<Student> paserSoftwareStudent(String xmlStr) {
         ArrayList<Student> list = new ArrayList<>();
         try {
             Document document = DocumentHelper.parseText(xmlStr);
@@ -62,7 +62,7 @@ public class parseXML {
     }
 
 
-    public ArrayList<Selection> paserSoftwareSelection(String xmlStr) {
+    public static ArrayList<Selection> paserSoftwareSelection(String xmlStr) {
         ArrayList<Selection> list = new ArrayList<>();
         try {
             Document document = DocumentHelper.parseText(xmlStr);
