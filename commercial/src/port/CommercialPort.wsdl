@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://port" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://port" xmlns:intf="http://port" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://port" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="id" type="xsd:string"/>
+   <element name="courseid" type="xsd:string"/>
+   <element name="chooseCourseReturn" type="xsd:string"/>
+   <element name="myid" type="xsd:string"/>
+   <element name="findMyCourseReturn" type="xsd:string"/>
+   <element name="studentid" type="xsd:string"/>
+   <element name="name" type="xsd:string"/>
+   <element name="loginReturn" type="xsd:string"/>
+   <element name="empty" type="xsd:string"/>
+   <element name="findAllCourseReturn" type="xsd:string"/>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="findMyCourseResponse">
+
+      <wsdl:part element="impl:findMyCourseReturn" name="findMyCourseReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="chooseCourseRequest">
+
+      <wsdl:part element="impl:id" name="id"/>
+
+      <wsdl:part element="impl:courseid" name="courseid"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="findAllCourseRequest">
+
+      <wsdl:part element="impl:empty" name="empty"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="findAllCourseResponse">
+
+      <wsdl:part element="impl:findAllCourseReturn" name="findAllCourseReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="findMyCourseRequest">
+
+      <wsdl:part element="impl:myid" name="myid"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="loginRequest">
+
+      <wsdl:part element="impl:studentid" name="studentid"/>
+
+      <wsdl:part element="impl:name" name="name"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="chooseCourseResponse">
+
+      <wsdl:part element="impl:chooseCourseReturn" name="chooseCourseReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="loginResponse">
+
+      <wsdl:part element="impl:loginReturn" name="loginReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:portType name="CommercialPort">
+
+      <wsdl:operation name="chooseCourse" parameterOrder="id courseid">
+
+         <wsdl:input message="impl:chooseCourseRequest" name="chooseCourseRequest"/>
+
+         <wsdl:output message="impl:chooseCourseResponse" name="chooseCourseResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="findMyCourse" parameterOrder="myid">
+
+         <wsdl:input message="impl:findMyCourseRequest" name="findMyCourseRequest"/>
+
+         <wsdl:output message="impl:findMyCourseResponse" name="findMyCourseResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="login" parameterOrder="studentid name">
+
+         <wsdl:input message="impl:loginRequest" name="loginRequest"/>
+
+         <wsdl:output message="impl:loginResponse" name="loginResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="findAllCourse" parameterOrder="empty">
+
+         <wsdl:input message="impl:findAllCourseRequest" name="findAllCourseRequest"/>
+
+         <wsdl:output message="impl:findAllCourseResponse" name="findAllCourseResponse"/>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="CommercialPortSoapBinding" type="impl:CommercialPort">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="chooseCourse">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="chooseCourseRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="chooseCourseResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="findMyCourse">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="findMyCourseRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="findMyCourseResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="login">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="loginRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="loginResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="findAllCourse">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="findAllCourseRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="findAllCourseResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="CommercialPortService">
+
+      <wsdl:port binding="impl:CommercialPortSoapBinding" name="CommercialPort">
+
+         <wsdlsoap:address location="http://localhost:8080//services/port/CommercialPort"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
