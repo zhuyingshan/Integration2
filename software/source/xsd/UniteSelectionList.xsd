@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="UniteSelectionList" type="选课列表类型"/>
+   
+    <xs:complexType name ="选课列表类型">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="UniteSelection" type="选课信息类型"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="选课信息类型">
+    	<xs:sequence>
+    		<xs:element name="课程编号" type="课程编号类型"/>
+    		<xs:element name="学生编号" type="学生编号类型"/>
+    		<xs:element name="分数" type="xs:double"/>
+    	</xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="课程编号类型">
+        <xs:restriction base="xs:string">
+            <xs:length value="8"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="学生编号类型">
+    	<xs:restriction base="xs:string">
+            <xs:length value="9"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="分数类型">
+        <xs:restriction base="xs:string">
+            <xs:length value="4"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>
