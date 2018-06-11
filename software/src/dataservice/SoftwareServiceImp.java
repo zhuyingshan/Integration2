@@ -6,6 +6,7 @@ import po.LoginResult;
 import po.Selection;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class SoftwareServiceImp implements SoftwareService {
@@ -77,9 +78,9 @@ public class SoftwareServiceImp implements SoftwareService {
     }
 
     @Override
-    public boolean select(String studentID, String coureseID) {
+    public boolean select(String courseID, String studentID) {
         try {
-            Selection selection = new Selection(studentID, coureseID);
+            Selection selection = new Selection(courseID, studentID);
             String addString = " insert into selection values (" + selection.courseId
                     + "," + selection.studentId + "," + selection.grade + ")";
             softwareJdbcHelper.run(addString);
@@ -90,6 +91,24 @@ public class SoftwareServiceImp implements SoftwareService {
                 return  false;
             }
         } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    @Override
+    public boolean deleteCourse(String courseID, String studentID) {
+        try {
+            Selection selection = new Selection(courseID, studentID);
+            String addString = "delete from selection where 课程编号 = " + selection.courseId + " and 学生编号 = " + selection.studentId;
+            softwareJdbcHelper.run(addString);
+            int result = softwareJdbcHelper.pst.executeUpdate();
+            if (result != 0) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return false;

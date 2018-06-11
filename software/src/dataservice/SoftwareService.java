@@ -14,5 +14,7 @@ public interface SoftwareService {
 
     public ArrayList<Selection> getHistorySel(String studentID);
 
-    public boolean select(String studentID, String coureseID);
+    public boolean select(String courseID, String studentID);
+
+    boolean deleteCourse(String courseID, String studentID);
 }

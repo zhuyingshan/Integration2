@@ -6,6 +6,7 @@ package dataservice;
 public class Test {
     public static void main(String []args) {
         SoftwareService softwareService = new SoftwareServiceImp();
-        System.out.print(softwareService.getHistorySel("151250001").size());
+        System.out.println(softwareService.getHistorySel("151250001").size());
+        System.out.println(softwareService.deleteCourse("15120003", "151250001"));
     }
 }
