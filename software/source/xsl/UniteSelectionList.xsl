@@ -8,15 +8,15 @@
 				<UniteSelectionList>
 					<xsl:for-each select="SoftwareSelectionList/SoftwareSelection">
 						<UniteSelection>
-							<xsl:attribute name="课程编号">
+							<课程编号>
 								<xsl:value-of select="课程编号"/>
-							</xsl:attribute>
-							<xsl:attribute name="学生编号">
+							</课程编号>
+							<学生编号>
 								<xsl:value-of select="学生编号"/>
-							</xsl:attribute>
-							<xsl:attribute name="分数">
+							</学生编号>
+							<分数>
 								<xsl:value-of select="成绩"/>
-							</xsl:attribute>
+							</分数>
 						</UniteSelection>
 					</xsl:for-each>
 				</UniteSelectionList>
@@ -25,15 +25,15 @@
 				<UniteSelectionList>
 					<xsl:for-each select="MathSelectionList/MathSelection">
 						<UniteSelection>
-							<xsl:attribute name="课程编号">
+							<课程编号>
 								<xsl:value-of select="课程编号"/>
-							</xsl:attribute>
-							<xsl:attribute name="学生编号">
+							</课程编号>
+							<学生编号>
 								<xsl:value-of select="学号"/>
-							</xsl:attribute>
-							<xsl:attribute name="分数">
+							</学生编号>
+							<分数>
 								<xsl:value-of select="分数"/>
-							</xsl:attribute>
+							</分数>
 						</UniteSelection>
 					</xsl:for-each>
 				</UniteSelectionList>
@@ -42,15 +42,15 @@
 				<UniteSelectionList>
 					<xsl:for-each select="CommerceSelectionList/CommerceSelection">
 						<UniteSelection>
-							<xsl:attribute name="课程编号">
-								<xsl:value-of select="cns"/>
-							</xsl:attribute>
-							<xsl:attribute name="学生编号">
+							<课程编号>
+								<xsl:value-of select="cno"/>
+							</课程编号>
+							<学生编号>
 								<xsl:value-of select="sno"/>
-							</xsl:attribute>
-							<xsl:attribute name="分数">
-								<xsl:value-of select="grd"/>
-							</xsl:attribute>
+							</学生编号>
+							<分数>
+								<xsl:value-of select="gra"/>
+							</分数>
 						</UniteSelection>
 					</xsl:for-each>
 				</UniteSelectionList>

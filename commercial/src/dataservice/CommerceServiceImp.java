@@ -82,6 +82,8 @@ public class CommerceServiceImp implements CommerceService {
         ArrayList<Selection> list = new ArrayList<>();
         try {
             String queryString = "select *from selection where sno=\"" + studentID + "\";";
+
+            System.out.println("query:"+queryString);
             jdbcHelper.run(queryString);
             ResultSet set = jdbcHelper.pst.executeQuery();
             while (set.next()) {
@@ -107,9 +109,10 @@ public class CommerceServiceImp implements CommerceService {
     @Override
     public boolean select(String studentID, String coureseID) {
         try {
-            Selection selection = new Selection(studentID, coureseID);
+            Selection selection = new Selection(coureseID, studentID);
             String addString = " insert into selection values(\"" + selection.courseId
                     + "\",\"" + selection.studentId + "\",\"" + selection.grade + "\");";
+            System.out.println(addString+"*****");
             jdbcHelper.run(addString);
             int result=jdbcHelper.pst.executeUpdate();
             if(result!=0){

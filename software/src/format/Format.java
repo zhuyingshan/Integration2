@@ -13,18 +13,18 @@ import java.io.*;
  * Created by 朱应山 on 2018/6/11.
  */
 public class Format {
-    public static String formatXML(String srcXML, TramsformType type) {
+    public static String formatXML(String srcXML, TransformType type) {
         String dst = "";
         String xsltFile = "";
         switch (type) {
             case COURSETOUNITE:
-                xsltFile = "source/xsl/UniteCourses.xsl";
+                xsltFile = "E:\\GitHub\\Integration2\\software\\source\\xsl\\UniteCourses.xsl";
                 break;
             case STUDENTTOUNITE:
-                xsltFile = "source/xsl/UnitedStudent.xsl";
+                xsltFile = "E:\\GitHub\\Integration2\\software\\source\\xsl\\UnitedStudent.xsl";
                 break;
             case SELECTIONTOUNITE:
-                xsltFile = "source/xsl/UniteSelectionList.xsl";
+                xsltFile = "E:\\GitHub\\Integration2\\software\\source\\xsl\\UniteSelectionList.xsl";
                 break;
         }
         try {
@@ -35,7 +35,7 @@ public class Format {
             Transformer trans = transFact.newTransformer(xsltSource);
             ByteArrayOutputStream destResult = new ByteArrayOutputStream();
             trans.transform(srcSource, new StreamResult(destResult));
-            dst = destResult.toString();
+            dst = new String(destResult.toString().getBytes("GBK"),"UTF-8");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -61,7 +61,7 @@ public class Format {
         }
     }
 
-    public  static void transformXml(InputStream srcStream, OutputStream destStream, TramsformType type){
+    public  static void transformXml(InputStream srcStream, OutputStream destStream, TransformType type){
         //InputSteam in=new ByteArrayInputStream(str.getBytes()); �ַ������������
         String xsltFile="";
         switch (type){

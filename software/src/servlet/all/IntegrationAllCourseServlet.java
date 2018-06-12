@@ -3,6 +3,8 @@ package servlet.all;
 import commercialClientPart.demo.CommercialPortServiceLocator;
 import commercialClientPart.demo.CommercialPort_PortType;
 import dataUtils.ParseXML;
+import format.Format;
+import format.TransformType;
 import format.UniteParseXML;
 import po.Course;
 import po.Selection;
@@ -49,15 +51,23 @@ public class IntegrationAllCourseServlet extends HttpServlet {
             String name = request.getParameter("name");
             String department = request.getParameter("department");
 
-            ArrayList<Course> softwareCourses = UniteParseXML.paserUniteCourse(softwareService.findAllCourse("88"));
-            ArrayList<Course> commercialCourses = UniteParseXML.paserUniteCourse(commercialPort_portType.findAllCourse("88"));
+            ArrayList<Course> softwareCourses = UniteParseXML.paserUniteCourse(Format.formatXML(softwareService.findAllCourse("88"), TransformType.COURSETOUNITE));
+            System.out.println(commercialPort_portType.findAllCourse("88"));
+            String str=commercialPort_portType.findAllCourse("88");
+            System.out.println("1*****"+str);
+            str=Format.formatXML(commercialPort_portType.findAllCourse("88")
+                    , TransformType.COURSETOUNITE);
+            ArrayList<Course> commercialCourses = UniteParseXML.paserUniteCourse(str);
 
+            System.out.println(commercialCourses.size()+"******");
             ArrayList<Course> all = new ArrayList<>();
+            System.out.println(">>>>>>>>>>>>>"+department);
             if (department.equals("software")) {
                 all.addAll(softwareCourses);
             } else {
                 for (Course c:softwareCourses) {
-                    if (c.isShare == '是') {
+                    System.out.println(">>>>>>>>>>>>>"+c.isShare);
+                    if (c.isShare == 'Y') {
                         all.add(c);
                     }
                 }
@@ -66,7 +76,8 @@ public class IntegrationAllCourseServlet extends HttpServlet {
                 all.addAll(commercialCourses);
             } else {
                 for (Course c:commercialCourses) {
-                    if (c.isShare == '是') {
+                    System.out.println(">>>>>>>>>>>>>"+c.isShare);
+                    if (c.isShare == 'Y') {
                         all.add(c);
                     }
                 }
@@ -74,8 +85,16 @@ public class IntegrationAllCourseServlet extends HttpServlet {
 
             session.setAttribute("allCourse", all);
 
-            ArrayList<Selection> mySoftwareCourse = UniteParseXML.paserUniteSelection(softwareService.findMyCourse(studentId));
-            ArrayList<Selection> myCommercialCourse = UniteParseXML.paserUniteSelection(commercialPort_portType.findMyCourse(studentId));
+            ArrayList<Selection> mySoftwareCourse = UniteParseXML.paserUniteSelection(Format.formatXML(softwareService.findMyCourse(studentId), TransformType.SELECTIONTOUNITE));
+            System.out.println("software"+mySoftwareCourse.size());
+            String string =commercialPort_portType.findMyCourse(studentId);
+            System.out.println(string);
+            string=Format.formatXML(string,TransformType.SELECTIONTOUNITE);
+            System.out.println(string );
+            ArrayList<Selection> myCommercialCourse =UniteParseXML.paserUniteSelection(string );
+            System.out.println(myCommercialCourse.size());
+            //ArrayList<Selection> myCommercialCourse = UniteParseXML.paserUniteSelection(Format.formatXML(commercialPort_portType.findMyCourse(studentId), TransformType.SELECTIONTOUNITE));
+            System.out.println("commercial"+myCommercialCourse.size());
 
             ArrayList<Selection> myCourse = new ArrayList<>();
             myCourse.addAll(myCommercialCourse);
@@ -84,13 +103,17 @@ public class IntegrationAllCourseServlet extends HttpServlet {
             session.setAttribute("myCourse", myCourse);
 
 
-            String res = softwareService.login(studentId, name);
+            String res = softwareService.login(studentId+","+name, name);
+
+
 
             if (res.equals("SUCCESS")) {
                 session.setAttribute("studentId", studentId);
                 session.setAttribute("department", department);
 
-                response.sendRedirect("IntegrationAllCourseServlet.jsp");
+                System.out.println("+++++++++++++++++++++++++++++++++++++");
+
+                response.sendRedirect("integrationAllCourse.jsp");
             } else if (res.equals("ERROR")) {
                 response.getWriter().println("登录失败");
             } else {

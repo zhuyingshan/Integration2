@@ -60,7 +60,7 @@
 
         $.ajax({
             type: 'POST',
-            url: '/softwareChooseCourse',
+            url: '/mathChooseCourse',
             data: data,
             success: function () {
                 console.log("555");

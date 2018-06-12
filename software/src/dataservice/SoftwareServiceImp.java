@@ -85,6 +85,7 @@ public class SoftwareServiceImp implements SoftwareService {
             Selection selection = new Selection(courseID, studentID);
             String addString = " insert into selection values (" + selection.courseId
                     + "," + selection.studentId + "," + selection.grade + ")";
+            System.out.println(addString+"语句****");
             softwareJdbcHelper.run(addString);
             int result=softwareJdbcHelper.pst.executeUpdate();
             if(result!=0){

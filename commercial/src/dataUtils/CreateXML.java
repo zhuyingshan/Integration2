@@ -33,11 +33,11 @@ public class CreateXML {
         Element commerceSelectionList = document.addElement("CommerceSelectionList");
         for (Selection selection : list) {
             Element commerceSelection = commerceSelectionList.addElement("CommerceSelection");
-            Element cno = commerceSelection.addElement("cns");
+            Element cno = commerceSelection.addElement("cno");
             cno.setText(selection.courseId);
             Element cnm = commerceSelection.addElement("sno");
             cnm.setText(selection.studentId);
-            Element grade = commerceSelection.addElement("grd");
+            Element grade = commerceSelection.addElement("gra");
             grade.setText(selection.grade + "");
         }
         return document.asXML();

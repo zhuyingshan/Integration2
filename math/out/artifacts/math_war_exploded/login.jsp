@@ -11,7 +11,7 @@
     <title>Software-login</title>
   </head>
   <body>
-    <form action="/softwareAllCourse" method="post">
+    <form action="/mathAllCourse" method="post">
       <label for="studentId">学号:</label>
       <input type="text" name="studentId" id="studentId" />
       <label for="name">姓名:</label>

@@ -45,9 +45,9 @@ public class parseXML {
             Element Selections = document.getRootElement();
             for (Iterator i = Selections.elementIterator(); i.hasNext(); ) {
                 Element element = (Element) i.next();
-                String studentId = element.elementText("cns");
+                String studentId = element.elementText("cno");
                 String courseID = element.elementText("sno");
-                String grade = element.elementText("grd");
+                String grade = element.elementText("gra");
 
                 Selection selection = new Selection(studentId, courseID, Double.parseDouble(grade));
                 list.add(selection);

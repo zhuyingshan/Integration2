@@ -13,6 +13,9 @@
 <body>
 
 <a href="login.jsp">软件</a>
+<a href="integrationLogin.jsp">集成</a>
+<a href="">数学</a>
+<a href="">经济</a>
 
 </body>
 </html>

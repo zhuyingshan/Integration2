@@ -61,17 +61,20 @@ public class UniteParseXML {
 
 
     public static ArrayList<Selection> paserUniteSelection(String xmlStr) {
+
+        System.out.println("/////////////////"+xmlStr);
+
         ArrayList<Selection> list = new ArrayList<>();
         try {
             Document document = DocumentHelper.parseText(xmlStr);
             Element Selections = document.getRootElement();
             for (Iterator i = Selections.elementIterator(); i.hasNext(); ) {
                 Element element = (Element) i.next();
-                String studentId = element.elementText("课程编号");
-                String courseID = element.elementText("学生编号");
-                String grade = element.elementText("成绩");
+                String courseID = element.elementText("课程编号");
+                String studentId = element.elementText("学生编号");
+                String grade = element.elementText("分数");
 
-                Selection selection = new Selection(studentId, courseID, Double.parseDouble(grade));
+                Selection selection = new Selection(courseID, studentId, Double.parseDouble(grade));
                 list.add(selection);
             }
 

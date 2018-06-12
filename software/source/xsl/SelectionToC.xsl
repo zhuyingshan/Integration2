@@ -8,13 +8,13 @@
 				<xsl:when test="UniteSelectionList">
 					<xsl:for-each select="UniteSelectionList/UniteSelection">
 						<CommerceSelection>
-							<xsl:attribute name="cns">
+							<xsl:attribute name="cno">
 								<xsl:value-of select="课程编号"/>
 							</xsl:attribute>
 							<xsl:attribute name="sno">
 								<xsl:value-of select="学生编号"/>
 							</xsl:attribute>
-							<xsl:attribute name="grd">
+							<xsl:attribute name="gra">
 								<xsl:value-of select="分数"/>
 							</xsl:attribute>
 						</CommerceSelection>

@@ -18,7 +18,7 @@ public class CommercialPort {
 
   public String chooseCourse(String id, String courseid) {
 
-    return blService.select(id, courseid);
+    return blService.select(id.split(",")[0], id.split(",")[1]);
   }
 
   public String findAllCourse(String empty) {

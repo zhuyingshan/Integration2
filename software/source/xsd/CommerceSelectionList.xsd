@@ -10,9 +10,9 @@
 
     <xs:complexType name="选课信息类型">
     	<xs:sequence>
-    		<xs:element name="cns" type="课程编号类型"/>
+    		<xs:element name="cno" type="课程编号类型"/>
     		<xs:element name="sno" type="学号类型"/>
-    		<xs:element name="grd" type="xs:double"/>
+    		<xs:element name="gra" type="xs:double"/>
     	</xs:sequence>
     </xs:complexType>
 
